@@ -3,14 +3,16 @@
 # Description:
 #     Simple and singular neuron implementation. Made as an
 #     exploratory project.
+from Neuron import Neuron
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def default_evaluation(features, weights, biases):
+    net_i = 0
+    for i in range(len(features)):
+        net_i += weights[i]*features[i] - biases[i]
+    out_i = 1/(1+pow(2.71828, -net_i)) #TODO Use library for euler's number
 
+    return out_i
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    neuron = Neuron(default_evaluation)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
