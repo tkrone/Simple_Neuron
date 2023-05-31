@@ -4,6 +4,7 @@ transfer function. Allows for a variable number of features customizable
 evaluation function.
 Based on diagram found here: https://www.baeldung.com/cs/neural-networks-neurons
 """
+
 class Neuron:
     def __init__(self, evalFunc, features=[], weights=[], target=10, biases = []):
         self.weights = weights
